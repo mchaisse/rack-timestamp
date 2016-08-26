@@ -20,7 +20,16 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_development_dependency 'bundler', '~> 1.12'
-  spec.add_development_dependency 'rake',    '~> 10.0'
-  spec.add_development_dependency 'rack',    '~> 2.0'
-  spec.add_development_dependency 'rspec',   '~> 3.0'
+  spec.add_development_dependency 'rake',    '~> 11.2'
+  spec.add_development_dependency 'rspec',   '~> 3.5'
+
+  if RUBY_VERSION >= '2.2'
+    spec.add_development_dependency 'rack',  '~> 2.0'
+  else
+    spec.add_development_dependency 'rack',  '~> 1.6'
+  end
+
+  if RUBY_VERSION >= '2.0'
+    spec.add_development_dependency 'codeclimate-test-reporter'
+  end
 end

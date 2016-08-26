@@ -1,6 +1,6 @@
 # Rack Timestamp Middleware
 
-[![Build Status](https://travis-ci.org/mchaisse/rack-timestamp.svg?branch=master)](https://travis-ci.org/mchaisse/rack-timestamp) [![Dependency Status](https://gemnasium.com/badges/github.com/mchaisse/rack-timestamp.svg)](https://gemnasium.com/github.com/mchaisse/rack-timestamp) [![Code Climate](https://codeclimate.com/github/mchaisse/rack-timestamp.svg)](https://codeclimate.com/github/mchaisse/rack-timestamp)
+[![Build Status](https://travis-ci.org/mchaisse/rack-timestamp.svg?branch=master)](https://travis-ci.org/mchaisse/rack-timestamp) [![Dependency Status](https://gemnasium.com/badges/github.com/mchaisse/rack-timestamp.svg)](https://gemnasium.com/github.com/mchaisse/rack-timestamp) [![Code Climate](https://codeclimate.com/github/mchaisse/rack-timestamp/badges/gpa.svg)](https://codeclimate.com/github/mchaisse/rack-timestamp) [![Test Coverage](https://codeclimate.com/github/mchaisse/rack-timestamp/badges/coverage.svg)](https://codeclimate.com/github/mchaisse/rack-timestamp/coverage)
 
 `Rack::Timestamp` adds a timestamp to the Rack environment. By using this middleware at the top of the stack, it is usefull to **know exactly when the request has been processed by the server**. It will prevent `Time.now` to be spoiled by the execution time of the other middlewares and/or code within controllers/models/libs...
 
