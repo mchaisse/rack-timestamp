@@ -26,6 +26,13 @@ It is recommended to add the `Rack::Timestamp` middleware at the top of the stac
 config.middleware.insert_before 0, Rack::Timestamp
 ```
 
+Then in your app:
+
+```ruby
+puts env['rack.timestamp']
+=> 1472194171.28057
+```
+
 ## Running tests
 
 To run tests:

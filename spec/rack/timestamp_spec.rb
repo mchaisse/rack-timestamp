@@ -1,11 +1,28 @@
 require 'spec_helper'
 
 describe Rack::Timestamp do
-  it 'has a version number' do
-    expect(Rack::Timestamp::VERSION).not_to be nil
+  let(:app)     { ->(env) { [200, env, ['Hello World.']] } }
+  subject       { described_class.new(app) }
+  let(:request) { Rack::MockRequest.new(subject) }
+
+  context 'when get a response' do
+    let(:response) { request.get('/') }
+
+    it { expect(response.status).to eq(200) }
   end
 
-  it 'does something useful' do
-    expect(false).to eq(true)
+  describe 'rack timestamp inserted in rack environment' do
+    let(:time) { Time.now }
+
+    before(:each) do
+      allow(Time).to receive(:now).and_return(time)
+    end
+
+    context 'when get a response' do
+      let(:response) { request.get('/') }
+
+      it { expect(response['rack.timestamp']).to be_a(Float) }
+      it { expect(response['rack.timestamp']).to eq(time.to_f) }
+    end
   end
 end
