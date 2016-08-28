@@ -8,7 +8,7 @@ module Rack
     end
 
     def call(env)
-      env['rack.timestamp'] = Time.now.to_f
+      env['rack.timestamp'] = Time.now.httpdate
       @app.call(env)
     end
   end

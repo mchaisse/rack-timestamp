@@ -32,7 +32,7 @@ Then in your app:
 
 ```ruby
 puts env['rack.timestamp']
-=> 1472194171.28057
+=> "Sun, 28 Aug 2016 04:19:34 GMT"
 ```
 
 ## Running tests

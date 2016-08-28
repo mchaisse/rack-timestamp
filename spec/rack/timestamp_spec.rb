@@ -21,8 +21,8 @@ describe Rack::Timestamp do
     context 'when get a response' do
       let(:response) { request.get('/') }
 
-      it { expect(response['rack.timestamp']).to be_a(Float) }
-      it { expect(response['rack.timestamp']).to eq(time.to_f) }
+      it { expect(response['rack.timestamp']).to be_a(String) }
+      it { expect(response['rack.timestamp']).to eq(time.httpdate) }
     end
   end
 end
